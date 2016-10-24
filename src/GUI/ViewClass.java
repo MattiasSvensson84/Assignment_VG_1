@@ -17,7 +17,7 @@ public class ViewClass {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public  void runPlayer() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -42,7 +42,7 @@ public class ViewClass {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 222, 300);
+		frame.setBounds(100, 100, 466, 188);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -52,7 +52,34 @@ public class ViewClass {
 				playerMethods.playMusic();
 			}
 		});
-		btnPlay.setBounds(52, 74, 117, 29);
+		btnPlay.setBounds(6, 100, 117, 29);
 		frame.getContentPane().add(btnPlay);
+		
+		JButton btnOpen = new JButton("Open");
+		btnOpen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				playerMethods.open();
+			}
+		});
+		btnOpen.setBounds(349, 100, 117, 29);
+		frame.getContentPane().add(btnOpen);
+		
+		JButton btnNewButton = new JButton("Pause");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				playerMethods.pause();
+			}
+		});
+		btnNewButton.setBounds(118, 100, 117, 29);
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Stop");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				playerMethods.stop();
+			}
+		});
+		btnNewButton_1.setBounds(238, 100, 117, 29);
+		frame.getContentPane().add(btnNewButton_1);
 	}
 }
