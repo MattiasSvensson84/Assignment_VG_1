@@ -14,5 +14,11 @@ public class PlayerMethods implements PlayerInterface{
 		this.mp3Player = mp3Player;
 	}
 
+	@Override
+	public void playMusic() {
+		mp3Player.play();
+		
+	}
+
 	
 }
