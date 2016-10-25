@@ -8,6 +8,9 @@ import PlayerMethods.PlayerMethods;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.awt.event.InputMethodListener;
+import java.awt.event.InputMethodEvent;
 /**
  * 
  * @author Mattias Svensson
@@ -18,6 +21,7 @@ public class ViewClass {
 
 	private JFrame frame;
 	private PlayerMethods playerMethods = new PlayerMethods();
+	private JLabel lblShowMusicName = new JLabel("");
 
 	/**
 	 * Launch the application.
@@ -51,10 +55,15 @@ public class ViewClass {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JLabel lblMusic = new JLabel("Music: ");
+		lblMusic.setBounds(6, 48, 61, 16);
+		frame.getContentPane().add(lblMusic);
+		
 		JButton btnPlay = new JButton("Play");
 		btnPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				playerMethods.playMusic();
+				lblShowMusicName.setText(playerMethods.getFile().getName().toString());
 			}
 		});
 		btnPlay.setBounds(6, 100, 117, 29);
@@ -63,7 +72,10 @@ public class ViewClass {
 		JButton btnOpen = new JButton("Open");
 		btnOpen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				playerMethods.open();
+				lblShowMusicName.setText(playerMethods.getFile().getName().toString());
+				
 			}
 		});
 		btnOpen.setBounds(349, 100, 117, 29);
@@ -73,6 +85,7 @@ public class ViewClass {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				playerMethods.pause();
+				
 			}
 		});
 		btnNewButton.setBounds(118, 100, 117, 29);
@@ -86,5 +99,10 @@ public class ViewClass {
 		});
 		btnNewButton_1.setBounds(238, 100, 117, 29);
 		frame.getContentPane().add(btnNewButton_1);
+		
+		
+		lblShowMusicName.setBounds(62, 48, 398, 16);
+		frame.getContentPane().add(lblShowMusicName);
+			
 	}
 }

@@ -4,6 +4,7 @@ import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import GUI.ViewClass;
 import Interface.PlayerInterface;
 import jaco.mp3.player.MP3Player;
 /**
@@ -18,7 +19,15 @@ import jaco.mp3.player.MP3Player;
 public class PlayerMethods implements PlayerInterface{
 	
 	private MP3Player mp3Player = new MP3Player();
-	File file = new File("");
+	private File file = new File("");
+	
+	
+	public File getFile() {
+		return file;
+	}
+	public void setFile(File file) {
+		this.file = file;
+	}
 	
 	public PlayerMethods(){
 		super();
@@ -46,14 +55,13 @@ public class PlayerMethods implements PlayerInterface{
 	public void playMusic() {
 		if (file.getName() == "") {
 			open();
-			//mp3Player.play();
+		
 			
 		}else  {
-			//open();
+		
 			mp3Player.play();
 		}
-		
-		
+			
 	}
 	/**
 	 * Method for open and choose a file that is a song 
@@ -62,8 +70,7 @@ public class PlayerMethods implements PlayerInterface{
 	 */
 	@Override
 	public void open() {
-		System.out.println(getMp3Player());
-		System.out.println(file);
+		System.out.println(getFile());
 		JFileChooser chooserMp3File = new JFileChooser();
 		  FileNameExtensionFilter filter = new FileNameExtensionFilter(
 			        "MP3 Files", "mp3");
@@ -75,13 +82,11 @@ public class PlayerMethods implements PlayerInterface{
 			    	
 			    	file = chooserMp3File.getSelectedFile();
 			    	mp3Player.stop();
-			    	//lblMusicText.setText(file.getName().toString());
 			    	mp3Player = new MP3Player(file);
-			    	setMp3Player(mp3Player = new MP3Player(file));
+			    	setFile(file);
 			    	mp3Player.play();
-			    	System.out.println(getMp3Player());
-			    	System.out.println(file);
-			    	
+			    	System.out.println(getFile().getName());	
+			    
 			    }
 		   
 		
