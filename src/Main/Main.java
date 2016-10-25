@@ -1,4 +1,10 @@
 package Main;
+/**
+ * 
+ * @author Mattias Svensson
+ * 
+ * Main class
+ */
 
 import GUI.ViewClass;
 

@@ -8,11 +8,16 @@ import PlayerMethods.PlayerMethods;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * 
+ * @author Mattias Svensson
+ * 
+ * Class for user interface. includes design on all the buttons and actions on them
+ */
 public class ViewClass {
 
 	private JFrame frame;
-	PlayerMethods playerMethods = new PlayerMethods();
+	private PlayerMethods playerMethods = new PlayerMethods();
 
 	/**
 	 * Launch the application.
@@ -38,7 +43,7 @@ public class ViewClass {
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * Initialize the contents of the frame. Buttons and actions on them
 	 */
 	private void initialize() {
 		frame = new JFrame();

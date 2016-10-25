@@ -1,6 +1,11 @@
 package Interface;
 
-
+/**
+ * 
+ * @author Mattias Svensson
+ *
+ * Interface that include all operations
+ */
 
 public interface PlayerInterface {
 	
