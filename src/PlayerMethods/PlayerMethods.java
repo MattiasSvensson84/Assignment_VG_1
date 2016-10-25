@@ -46,7 +46,7 @@ public class PlayerMethods implements PlayerInterface{
 	
 	/**
 	 * Setter for the variable mp3Player
-	 * @param mp3Player
+	 * @param mp3Player mp3Player
 	 */
 	public void setMp3Player(MP3Player mp3Player) {
 		this.mp3Player = mp3Player;
