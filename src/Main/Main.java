@@ -14,7 +14,6 @@ public class Main {
 		
 		ViewClass viewClass = new ViewClass();
 		
-		viewClass.runPlayer();
 	}
 
 }
